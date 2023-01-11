@@ -29,11 +29,9 @@ class kategorikehilanganController extends Controller
     return redirect()->back()->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
-    public function edit(kategorikehilangan $kategorikehilangan)
+    public function edit(kategorikehilangan $kategori_kehilangan)
     {
-        return view('kategori.edit',[
-            'kategorikehilangan' => kategorikehilangan::all()
-        ]);
+        return view('admin.kategori_kehilangan.edit', compact('kategori_kehilangan'));
     }
 
     public function update(Request $request, kategorikehilangan $kategorikehilangan)

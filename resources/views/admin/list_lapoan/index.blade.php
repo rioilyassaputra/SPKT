@@ -17,14 +17,14 @@
     <div class="col-lg-12">
       <div class="card mb-4">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-          <h6 class="m-0 font-weight-bold text-primary">Data Kategori Laporan</h6>
+          <h6 class="m-0 font-weight-bold text-primary">List laporan</h6>
           <div class="row">
 
-
+{{--
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                     id="#myBtn">
                     Masukkan Kategori Laporan
-                  </button>
+                  </button> --}}
 
 
               </div>
@@ -34,28 +34,29 @@
             <thead class="thead-light">
               <tr>
                 <th>#</th>
-                <th>Nama Kategori Laporan</th>
+                <th>Nama Pelapor</th>
+                <th>Alamat Pelapor</th>
+                <th>No Laporan</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
 
             <tbody>
-                @forelse ($kategoriLaporan as $Laporan)
+                @forelse ($listlaporan as $Laporan)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $Laporan->nama_kategori_laporan }}</td>
+                <td>{{ $Laporan->nama_Pelapor }}</td>
+                <td>{{ $Laporan->alamat }}</td>
+                <td>{{ $Laporan->no_laporan }}</td>
+                <td>{{ $Laporan->status }}</td>
                 <td>
-                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"  action="/kategori-laporan/{{$Laporan->id_kategori_laporan}}" method="POST">
-                        <a href="{{ route('kategori-laporan.edit', $Laporan->id_kategori_laporan) }}" class="btn btn-sm btn-primary">EDIT</a>
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
-                </form>
+
                 </td>
               </tr>
               @empty
               <div class="alert alert-danger">
-                  Data kategori laporan belum Tersedia.
+                  Data Laporan belum Tersedia.
               </div>
           @endforelse
             </tbody>
@@ -63,7 +64,7 @@
         </div>
       </div>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -91,9 +92,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
 
-   
+
 
 
 @endsection

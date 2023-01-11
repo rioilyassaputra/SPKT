@@ -28,6 +28,11 @@ class kategorilaporanController extends Controller
     return redirect()->back()->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
+    public function edit(KategoriLaporan $kategori_laporan)
+    {
+        return view('admin.kategori_laporan.edit', compact('kategori_laporan'));
+    }
+
     public function update(Request $request, KategoriLaporan $kategori_laporan)
     {
         //validate form
@@ -38,12 +43,7 @@ class kategorilaporanController extends Controller
             $kategori_laporan->update([
                 'nama_kategori_laporan'     => $request->nama_kategori_laporan,
             ]);
-
-
-
-
-        //redirect to index
-        return redirect()->back()->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('kategori-laporan.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
 
     public function destroy(kategoriLaporan $kategori_laporan)

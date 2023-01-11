@@ -22,9 +22,16 @@ use App\Http\Controllers\kategorikehilanganController;
 // });
 
 Route::resource('/', LaporanController::class);
-Route::resource('admin', AdminController::class);
-Route::resource('kategori-laporan', kategorilaporanController::class);
+Route::resource('admin', AdminController::class)->middleware('auth');
+Route::resource('kategori-laporan', kategorilaporanController::class)->except('show')->middleware('auth');
 Route::resource('kategori-kehilangan', kategorikehilanganController::class);
 
+route::get('list-laporan', [App\Http\Controllers\listlaporanController::class, 'index']);
+
+Route::get('/login', [App\Http\Controllers\UserController::class, 'login'])->name('login');
+Route::post('/loginproses', [App\Http\Controllers\UserController::class, 'loginproses'])->name('loginproses');
+Route::get('/register', [App\Http\Controllers\UserController::class, 'register'])->name('register')->middleware('auth');
+Route::post('/registeruser', [App\Http\Controllers\UserController::class, 'registeruser'])->name('registeruser')->middleware('auth');
+Route::get('/logout', [App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 
 

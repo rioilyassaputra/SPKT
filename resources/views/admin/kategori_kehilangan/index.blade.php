@@ -45,9 +45,9 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $kehilangan->nama_kehilangan }}</td>
                 <td>{{ $kehilangan->persyaratan }}</td>
-                <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editkategori"
-                    id="#myBtn">edit </button>
-                         <form onsubmit="return confirm('Apakah Anda Yakin ?');"  action="/kategori-kehilangan/{{$kehilangan->id_kategori_kehilangan}}" method="POST">
+                <td>
+                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"  action="/kategori-kehilangan/{{$kehilangan->id_kategori_kehilangan}}" method="POST">
+                        <a href="{{ route('kategori-kehilangan.edit', $kehilangan->id_kategori_kehilangan) }}" class="btn btn-sm btn-primary">EDIT</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
@@ -69,7 +69,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Tambah Kategori Kehilangan</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -99,5 +99,7 @@
         </div>
       </div>
     </div>
+
+
 
 @endsection

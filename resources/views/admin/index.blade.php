@@ -311,14 +311,6 @@
     </div>
     <!--Row-->
 
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <p>Do you like this template ? you can download from <a href="https://github.com/indrijunanda/RuangAdmin"
-                    class="btn btn-primary btn-sm" target="_blank"><i class="fab fa-fw fa-github"></i>&nbsp;GitHub</a>
-            </p>
-        </div>
-    </div>
-
     <!-- Modal Logout -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
         aria-hidden="true">
@@ -335,7 +327,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                    <a href="login.html" class="btn btn-primary">Logout</a>
+                    <a href="/logout" class="btn btn-primary">Logout</a>
                 </div>
             </div>
         </div>
