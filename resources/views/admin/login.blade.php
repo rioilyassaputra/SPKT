@@ -37,9 +37,9 @@
                     </div>
                     @endif
                     <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4"> <b>Login</b></h1>
                       <img src="img/logo/E-SPKT.png" class="mb-3"  width="300px" alt="">
 
-                      <h1 class="h4 text-gray-900 mb-4"> <b>Login</b></h1>
                   </div>
                   <form action="/loginproses" method="post" class="user">
                     @csrf
